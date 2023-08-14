@@ -1,0 +1,170 @@
+
+
+.cabecalho__menu-hamburger {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.cabecalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem{
+    padding: 1em;
+}
+
+.lista-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+
+.container__botao:checked ~ .lista-menu{
+    display: block;
+}
+/* condicional css, se o botao container tiver checked, ele vai procurar outro que venha depois dele que tenha a classe
+lista-menu e vai por display block nele  */
+
+
+.lista-menu__titulo,
+.lista-menu__item{
+    padding: 1em;
+    background-color: var(--branco); 
+
+
+}
+
+.lista-menu__titulo{
+
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__link{
+
+    background-color:var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+
+}
+
+.container__botao{
+    display: none;
+}
+
+
+/* media queries usada para aplicar estilos para determinados tamanhos de telas usar o 
+max-width para desktop e min-width para mobile */
+
+
+.container__titulo{
+    display: none;
+}
+
+
+.opcoes{
+    display: none;
+}
+
+
+.container__texto{
+    display: none;
+}
+
+
+@media screen and (min-width: 1024px){
+
+    .container__titulo, .container__titulo--negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .container__titulo{
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__titulo--negrito{
+        font-weight: 700;
+    }
+
+    .opcoes{
+        display: flex;
+    }
+
+    .opcoes__item{
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    .opcoes__link{
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .container__imagem-transparente{
+        display: none;
+    }
+
+    .cabecalho__menu-hamburger{
+        display: none;
+
+    }
+
+}
+
+
+.opcoes__botao:checked~.lista-menu{
+    display: block;
+    width: auto;
+}
+
+.opcoes__botao{
+    display: none;
+}
+
+
+
+
+
+
+
+@media screen and (min-width:1728px) {
+    
+    .container__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .cabecalho{
+        padding: 0 2em;
+    }
+
+    .opcoes{
+        margin-right: auto;
+    }
+
+    .container__texto{
+        display: block;
+    }
+
+}
